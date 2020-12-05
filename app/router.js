@@ -16,4 +16,5 @@ module.exports = app => {
   router.get('/article/list', controller.article.list);
   router.get('/article/detail/:id', controller.article.detail);
   router.post('/users/signin', controller.users.signin);
+  router.get('/article/union', controller.article.articleunion);
 };

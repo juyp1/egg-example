@@ -55,6 +55,21 @@ class ArticleController extends Controller {
 
     }
   }
+  async articleunion() {
+    const { ctx } = this;
+    const result = await this.service.article.articleunion();
+    if (result) {
+      ctx.body = {
+        status: 200,
+        data: result,
+      };
+    } else {
+      ctx.body = {
+        status: 500,
+        errMsg: '查询失败',
+      };
+    }
+  }
 
 }
 

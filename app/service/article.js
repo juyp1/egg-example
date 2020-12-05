@@ -37,6 +37,16 @@ class ArticleService extends Service {
       return null;
     }
   }
+  async articleunion() {
+    const { app } = this;
+    try {
+      const result = await app.mysql.query('select a.img,a.title,a.summary,a.content,a.createTime,b.type from article as a INNER JOIN articletypes as b  on a.atypes = b.id');
+      return result;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
 }
 
 module.exports = ArticleService;
