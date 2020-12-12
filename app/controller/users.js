@@ -11,7 +11,7 @@ class UsersController extends Controller {
         id: result.id,
       }, app.config.jwt.secret);
 
-
+      app.redis.set(ctx.request.body.account, token); // 把token存入redis
       ctx.body = {
         code: 200,
         message: '登录成功',
