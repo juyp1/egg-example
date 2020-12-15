@@ -1,7 +1,6 @@
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
-
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -33,7 +32,7 @@ module.exports = appInfo => {
       // 密码
       password: 'root',
       // 数据库名
-      database: 'egg_article',
+      database: 'bugclose',
     },
     // 是否加载到 app 上，默认开启
     app: true,
@@ -41,13 +40,13 @@ module.exports = appInfo => {
     agent: false,
   };
   config.jwt = {
-    secret: 'zhihu',
+    secret: '165165',
   };
   config.sequelize = {
     dialect: 'mysql', // 表示使用mysql
     host: 'localhost', // 连接的数据库主机地址
     port: 3306, // mysql服务端口
-    database: 'egg_article', // 数据库名
+    database: 'bugclose', // 数据库名
     username: 'root', // 数据库用户名
     password: 'root', // 数据库密码
     define: { // model的全局配置
@@ -75,10 +74,16 @@ module.exports = appInfo => {
       db: 0,
     },
   };
+  config.uploadDir = 'app/public/avatar/upload'; // 头像上传
+  // config.static = {
+  //   prefix: '/',
+  //   dir: path.join(appInfo.baseDir, '/app/public/apidoc/'),
+  // };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
   };
+
 
   return {
     ...config,
