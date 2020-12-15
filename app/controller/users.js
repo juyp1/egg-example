@@ -22,9 +22,9 @@ class UsersController extends Controller {
       upass: utility.md5(ctx.request.body.upass),
     };
     const result = await ctx.service.users.signin(data);
-    console.log('11111');
+
     if (result) {
-      console.log(result[0].uname);
+
       const token = app.jwt.sign({
         uemail: result[0].uemail,
         uname: result[0].uname,
@@ -98,9 +98,6 @@ class UsersController extends Controller {
   async uputuInfo() {
     const { ctx, app } = this;
     const token = ctx.request.header.authorization.substring(7);
-    console.log(token);
-    // app.jwt.verify(token, app.config.jwt.secret);
-
     ctx.state.userinfo = await app.jwt.verify(token, app.config.jwt.secret);
     const data = {
       id: ctx.state.userinfo.id,
