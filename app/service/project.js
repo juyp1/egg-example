@@ -2,7 +2,7 @@
 const Service = require('egg').Service;
 
 class ProjectService extends Service {
-  // 登录
+
   async add(data) {
     const { app, ctx } = this;
 
@@ -31,6 +31,15 @@ class ProjectService extends Service {
 
     } catch (err) {
       console.log(err);
+      return null;
+    }
+  }
+  async projectUsers(id) {
+    const { app } = this;
+    try {
+      const result = await app.mysql.query(`SELECT a.uname,a.id FROM u_project as b INNER JOIN u_users as a  ON a.id = b.uuid where b.projectid = ${id}`);
+      return result;
+    } catch (error) {
       return null;
     }
   }

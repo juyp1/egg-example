@@ -143,5 +143,63 @@ define({ "api": [
     },
     "filename": "app/controller/comm.js",
     "groupTitle": "通用接口"
+  },
+  {
+    "type": "post",
+    "url": "project/add",
+    "title": "新建项目",
+    "name": "创建项目",
+    "group": "项目管理",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "projectname",
+            "description": "<p>项目名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "projectdesc",
+            "description": "<p>项目描述</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "statusid",
+            "description": "<p>项目状态</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "branchs",
+            "description": "<p>项目分支</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "models",
+            "description": "<p>模块列表</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "users",
+            "description": "<p>项目组成员</p>"
+          }
+        ]
+      }
+    },
+    "filename": "app/controller/project.js",
+    "groupTitle": "项目管理"
   }
 ] });

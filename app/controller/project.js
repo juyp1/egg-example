@@ -3,9 +3,9 @@
 const moment = require('moment');
 const Controller = require('egg').Controller;
 /**
- * @api {post} project/add 用户信息修改
- * @apiName 用户信息修改
- * @apiGroup 用户管理
+ * @api {post} project/add 新建项目
+ * @apiName 创建项目
+ * @apiGroup 项目管理
  * @apiVersion  1.0.0
  * @apiParam {string} projectname 项目名称
  * @apiParam {string} projectdesc 项目描述
@@ -43,6 +43,7 @@ class ProjectController extends Controller {
 
     }
   }
+
 }
 
 module.exports = ProjectController;
