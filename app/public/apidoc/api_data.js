@@ -145,6 +145,16 @@ define({ "api": [
     "groupTitle": "通用接口"
   },
   {
+    "type": "get",
+    "url": "comm/userlist",
+    "title": "所有用户信息",
+    "name": "所有用户信息",
+    "group": "通用接口",
+    "version": "1.0.0",
+    "filename": "app/controller/comm.js",
+    "groupTitle": "通用接口"
+  },
+  {
     "group": "项目管理",
     "type": "",
     "url": "",

@@ -55,7 +55,7 @@ class ProjectController extends Controller {
    */
   async projectUsers() {
     const { ctx } = this;
-    const projectid = ctx.params.projectid;
+    const projectid = ctx.params.id;
     const result = await ctx.service.project.projectUsers(projectid);
     if (result) {
       ctx.body = {

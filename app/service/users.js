@@ -46,10 +46,12 @@ class UserService extends Service {
       const result = await app.mysql.query(`update u_users set uname='${data.uname}',upass='${data.upass}',avatar='${data.avatar}' where id='${data.id}'`);
       return result;
     } catch (err) {
+      console.log(err);
       return null;
 
     }
   }
+
 
 }
 module.exports = UserService;

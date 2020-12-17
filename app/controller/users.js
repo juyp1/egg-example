@@ -37,7 +37,6 @@ class UsersController extends Controller {
         code: 200,
         message: '登录成功',
         info: {
-
           uemail: result[0].uemail,
           uname: result[0].uname,
           token,

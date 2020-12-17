@@ -49,6 +49,30 @@ class CommController extends Controller {
       };
     }
   }
+  /**
+ * @api {get} comm/userlist 所有用户信息
+ * @apiName 所有用户信息
+ * @apiGroup 通用接口
+ * @apiVersion  1.0.0
+   */
+  async userlist() {
+    const { ctx } = this;
+    try {
+      const result = await ctx.service.comm.userlist();
+      ctx.body = {
+        code: 200,
+        message: '获取成功',
+        list: result,
+      };
+    } catch (err) {
+      console.log(err);
+      ctx.body = {
+        code: 500,
+        message: '获取失败',
+        list: [],
+      };
+    }
+  }
 }
 
 module.exports = CommController;

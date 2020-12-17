@@ -25,6 +25,17 @@ class CommService extends Service {
       return null;
     }
   }
+  // 全部人员信息
+  async userlist() {
+    const { app } = this;
+    try {
+      const result = await app.mysql.query('SELECT uemail,uname,avatar FROM u_users WHERE status=0');
+      return result;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  }
 
 }
 

@@ -40,6 +40,7 @@ class ProjectService extends Service {
       const result = await app.mysql.query(`SELECT a.uname,a.id FROM u_project as b INNER JOIN u_users as a  ON a.id = b.uuid where b.projectid = ${projectid}`);
       return result;
     } catch (error) {
+      console.err(error);
       return null;
     }
   }
