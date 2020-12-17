@@ -34,10 +34,10 @@ class ProjectService extends Service {
       return null;
     }
   }
-  async projectUsers(id) {
+  async projectUsers(projectid) {
     const { app } = this;
     try {
-      const result = await app.mysql.query(`SELECT a.uname,a.id FROM u_project as b INNER JOIN u_users as a  ON a.id = b.uuid where b.projectid = ${id}`);
+      const result = await app.mysql.query(`SELECT a.uname,a.id FROM u_project as b INNER JOIN u_users as a  ON a.id = b.uuid where b.projectid = ${projectid}`);
       return result;
     } catch (error) {
       return null;

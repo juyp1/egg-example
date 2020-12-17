@@ -145,6 +145,15 @@ define({ "api": [
     "groupTitle": "通用接口"
   },
   {
+    "group": "项目管理",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "app/controller/project.js",
+    "groupTitle": "项目管理",
+    "name": ""
+  },
+  {
     "type": "post",
     "url": "project/add",
     "title": "新建项目",
@@ -195,6 +204,29 @@ define({ "api": [
             "optional": false,
             "field": "users",
             "description": "<p>项目组成员</p>"
+          }
+        ]
+      }
+    },
+    "filename": "app/controller/project.js",
+    "groupTitle": "项目管理"
+  },
+  {
+    "type": "get",
+    "url": "project/userlist/:id",
+    "title": "获取当前项目人员",
+    "name": "获取当前项目人员",
+    "group": "项目管理",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "projectid",
+            "description": "<p>项目id</p>"
           }
         ]
       }

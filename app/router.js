@@ -22,7 +22,8 @@ module.exports = app => {
   router.post('/users/uregister', controller.users.uregister);
   router.post('/users/uputinfo', jwt, controller.users.uputuInfo);
   router.post('/comm/upload/img', jwt, controller.comm.uploadimg);
-  router.post('/prject/add', jwt, controller.project.add);
+  router.post('/project/add', jwt, controller.project.add);
+  router.get('/project/userlist/:id', jwt, controller.project.projectUsers);
   // router.get('/article/union', controller.article.articleunion);
   // router.post('/news/create', controller.news.add);
 };
